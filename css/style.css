@@ -446,37 +446,6 @@ a:hover {
 }
 
 /* ===== Add Task Page ===== */
-.add-task-page {
-  min-height: 100vh;
-  padding: 20px;
-  padding-bottom: 88px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.add-task-page h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 22px;
-  color: #333;
-  letter-spacing: -0.02em;
-  animation: fadeInUp 0.4s ease forwards;
-}
-
-.add-task-form-container {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
-  padding: 28px;
-  margin-bottom: 20px;
-  animation: fadeInUp 0.4s ease 0.1s both;
-  transition: box-shadow 0.3s ease;
-}
-
-.add-task-form-container:hover {
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
-}
-
 .form-group {
   margin-bottom: 20px;
   animation: fadeInUp 0.4s ease both;
@@ -528,73 +497,8 @@ a:hover {
   color: #999;
 }
 
-.radio-group {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
 
-.radio-option {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: background 0.2s ease;
-}
 
-.radio-option:hover {
-  background: rgba(0, 123, 255, 0.06);
-}
-
-.radio-option input {
-  width: 18px;
-  height: 18px;
-  accent-color: #007bff;
-  cursor: pointer;
-}
-
-.add-task-btn {
-  width: 100%;
-  padding: 14px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 16px;
-  margin-top: 8px;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.add-task-btn:hover {
-  background: #0069d9;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.35);
-}
-
-.add-task-btn:active {
-  transform: translateY(0);
-}
-
-.cancel-link {
-  display: block;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  transition: color 0.2s ease;
-}
-
-.cancel-link:hover {
-  color: #007bff;
-  text-decoration: none;
-}
 
 /* ===== Profile Page ===== */
 .profile-page {
@@ -792,10 +696,6 @@ a:hover {
 }
 
 @media (min-width: 900px) {
-  .timetable-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
 
 
   .dashboard-page {
@@ -859,3 +759,109 @@ a:hover {
 
 
 
+/* ===== Add Task Page ===== */
+.add-task-page {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 100px;
+  max-width: 800px; /* Widened slightly for the grid layout */
+  margin: 0 auto;
+}
+
+/* Form Layout Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 20px;
+}
+
+@media (min-width: 650px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Modern Priority Pills */
+.modern-radio-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.priority-pill {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.priority-pill input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.priority-pill span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 6px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #888;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+/* Priority Pill Active States */
+.priority-pill.low input:checked ~ span { 
+  background: #f6ffed; 
+  border-color: #52c41a; 
+  color: #52c41a; 
+}
+.priority-pill.medium input:checked ~ span { 
+  background: #fffbe6; 
+  border-color: #faad14; 
+  color: #faad14; 
+}
+.priority-pill.high input:checked ~ span { 
+  background: #fff1f0; 
+  border-color: #ff4d4f; 
+  color: #ff4d4f; 
+}
+
+/* Form Action Buttons */
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  flex: 1;
+  text-align: center;
+  padding: 14px;
+  background: #f1f3f5;
+  color: #495057;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background: #e2e6ea;
+  text-decoration: none;
+}
+
+.cancel-btn:active {
+  transform: translateY(1px);
+}
+
+.add-task-btn {
+  flex: 2; /* Submit button takes up more visual weight */
+  margin-bottom: 0; /* Override old margin */
+  margin-top: 0;
+}
