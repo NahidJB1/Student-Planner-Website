@@ -7,102 +7,97 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main class="dashboard-page">
+  <main class="dashboard-page fade-in-animation">
     <header class="dashboard-header">
-      <p class="back-to-login"><a href="index.html">← Back to Login</a></p>
-      <h1>📖 Welcome back, Alex!</h1>
+      <div class="header-top">
+        <p class="back-to-login"><a href="index.html">← Logout</a></p>
+        <span class="date-badge">📅 April 2026</span>
+      </div>
+      <div class="welcome-section">
+        <h1>Welcome back, Alex! 👋</h1>
+        <p class="subtitle dashboard-subtitle">You have <strong>3</strong> upcoming deadlines.</p>
+      </div>
     </header>
 
-    <section class="timetable-section glass-panel">
-      <div class="section-header">
-        <h2 class="section-title">This Week's Schedule</h2>
-        <span class="live-indicator">● Live</span>
-      </div>
-      <div class="timetable-grid modern-grid">
-        <div class="timetable-day interactive-card">
-          <div class="card-top">
-            <strong>Monday</strong>
-            <span class="time-badge">10am–12pm</span>
-          </div>
-          <p class="course-name">💻 HCI</p>
+    <div class="dashboard-grid">
+      <section class="deadlines-section modern-card">
+        <div class="section-header">
+          <h2 class="section-title">Action Items</h2>
+          <a href="#" class="view-all">View All</a>
         </div>
-        <div class="timetable-day interactive-card">
-          <div class="card-top">
-            <strong>Tuesday</strong>
-            <span class="time-badge">9am–11am</span>
+        <div class="deadline-list">
+          <div class="deadline-item high-priority">
+            <div class="deadline-info">
+              <strong>HCI Assignment</strong>
+              <span>Human Computer Interaction</span>
+            </div>
+            <div class="deadline-meta">
+              <span class="due-date">Due 25 March</span>
+            </div>
           </div>
-          <p class="course-name">📐 Math</p>
-        </div>
-        <div class="timetable-day interactive-card empty-day">
-          <div class="card-top">
-            <strong>Wednesday</strong>
+          <div class="deadline-item medium-priority">
+            <div class="deadline-info">
+              <strong>Math Quiz</strong>
+              <span>Calculus 101</span>
+            </div>
+            <div class="deadline-meta">
+              <span class="due-date">Due 27 March</span>
+            </div>
           </div>
-          <p class="course-name" style="color: #999;">☕ No classes</p>
-        </div>
-        <div class="timetable-day interactive-card">
-          <div class="card-top">
-            <strong>Thursday</strong>
-            <span class="time-badge">2pm–4pm</span>
+          <div class="deadline-item low-priority">
+            <div class="deadline-info">
+              <strong>Programming Project</strong>
+              <span>Intro to Java</span>
+            </div>
+            <div class="deadline-meta">
+              <span class="due-date">Due 30 March</span>
+            </div>
           </div>
-          <p class="course-name">⌨️ Programming</p>
         </div>
-        <div class="timetable-day interactive-card">
-          <div class="card-top">
-            <strong>Friday</strong>
-            <span class="time-badge">1pm–3pm</span>
-          </div>
-          <p class="course-name">📝 English</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="deadlines-section">
-      <div class="section-header">
-        <h2 class="section-title">Upcoming Deadlines</h2>
-        <span class="task-count">3 Tasks</span>
-      </div>
-      <div class="deadline-cards modern-grid">
-        <div class="deadline-card interactive-card">
-          <div class="card-top">
-            <strong>HCI Assignment</strong>
-            <span class="priority-badge high">High</span>
+      <section class="timetable-section modern-card">
+        <div class="section-header">
+          <h2 class="section-title">Weekly Schedule</h2>
+        </div>
+        <div class="timetable-list">
+          <div class="timetable-row">
+            <div class="day-badge">Mon</div>
+            <div class="class-details">
+              <strong>HCI</strong>
+              <span>10:00 AM – 12:00 PM</span>
+            </div>
           </div>
-          <span class="due-date">📅 Due 25 March</span>
-        </div>
-        <div class="deadline-card interactive-card">
-          <div class="card-top">
-            <strong>Math Quiz</strong>
-            <span class="priority-badge medium">Med</span>
+          <div class="timetable-row">
+            <div class="day-badge">Tue</div>
+            <div class="class-details">
+              <strong>Math</strong>
+              <span>9:00 AM – 11:00 AM</span>
+            </div>
           </div>
-          <span class="due-date">📅 Due 27 March</span>
-        </div>
-        <div class="deadline-card interactive-card">
-          <div class="card-top">
-            <strong>Programming Project</strong>
-            <span class="priority-badge high">High</span>
+          <div class="timetable-row empty-day">
+            <div class="day-badge">Wed</div>
+            <div class="class-details">
+              <span>No classes scheduled</span>
+            </div>
           </div>
-          <span class="due-date">📅 Due 30 March</span>
+          <div class="timetable-row">
+            <div class="day-badge">Thu</div>
+            <div class="class-details">
+              <strong>Programming</strong>
+              <span>2:00 PM – 4:00 PM</span>
+            </div>
+          </div>
+          <div class="timetable-row">
+            <div class="day-badge">Fri</div>
+            <div class="class-details">
+              <strong>English</strong>
+              <span>1:00 PM – 3:00 PM</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="deadlines-section">
-      <h2 class="section-title">Upcoming Deadlines</h2>
-      <div class="deadline-cards">
-        <div class="deadline-card">
-          <strong>HCI Assignment</strong>
-          <span>Due 25 March</span>
-        </div>
-        <div class="deadline-card">
-          <strong>Math Quiz</strong>
-          <span>Due 27 March</span>
-        </div>
-        <div class="deadline-card">
-          <strong>Programming Project</strong>
-          <span>Due 30 March</span>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <nav class="bottom-nav">
