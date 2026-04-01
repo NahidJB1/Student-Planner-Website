@@ -7,38 +7,64 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main class="profile-page">
-    <p class="back-to-login"><a href="index.html">← Back to Login</a></p>
-    <h1>Profile & Settings</h1>
-
-    <section class="profile-section">
-      <h2>Profile Information</h2>
-      <div class="profile-info">
-        <p><strong>Name:</strong> Alex Johnson</p>
-        <p><strong>Email:</strong> alex@student.com</p>
+  <main class="profile-page fade-in-animation">
+    <header class="dashboard-header">
+      <div class="header-top">
+        <p class="back-to-login"><a href="dashboard.html">← Back to Dashboard</a></p>
       </div>
-    </section>
+      <div class="welcome-section profile-header-flex">
+        <div>
+          <h1>Profile & Settings ⚙️</h1>
+          <p class="subtitle dashboard-subtitle">Manage your account and preferences.</p>
+        </div>
+        <div class="avatar-circle">AJ</div>
+      </div>
+    </header>
 
-    <section class="profile-section">
-      <h2>Preferences</h2>
-      <div class="preference-row">
-        <span>Dark Mode</span>
-        <div class="toggle-buttons">
-          <button type="button" class="toggle-btn active">ON</button>
-          <button type="button" class="toggle-btn">OFF</button>
+    <section class="profile-section modern-card">
+      <div class="section-header">
+        <h2 class="section-title">Account Details</h2>
+      </div>
+      <div class="profile-info">
+        <div class="info-row">
+          <span class="info-label">Full Name</span>
+          <span class="info-value">Alex Johnson</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Email Address</span>
+          <span class="info-value">alex@student.com</span>
         </div>
       </div>
-      <div class="preference-row">
-        <label class="checkbox-option">
-          <input type="checkbox" name="reminders" checked>
-          Send email reminders for deadlines
-        </label>
+    </section>
+
+    <section class="profile-section modern-card">
+      <div class="section-header">
+        <h2 class="section-title">Preferences</h2>
+      </div>
+      <div class="preference-list">
+        <div class="preference-row">
+          <div class="pref-text">
+            <strong>Dark Mode</strong>
+            <span>Switch to a dark theme</span>
+          </div>
+          <div class="toggle-buttons">
+            <button type="button" class="toggle-btn active">ON</button>
+            <button type="button" class="toggle-btn">OFF</button>
+          </div>
+        </div>
+        <div class="preference-row">
+          <label class="checkbox-option">
+            <div class="pref-text">
+              <strong>Email Reminders</strong>
+              <span>Get notified before deadlines</span>
+            </div>
+            <input type="checkbox" name="reminders" checked>
+          </label>
+        </div>
       </div>
     </section>
 
-    <section class="profile-section">
-      <button type="button" class="logout-btn">Logout</button>
-    </section>
+    <a href="index.html" class="logout-btn-modern">Log Out</a>
   </main>
 
   <nav class="bottom-nav">
