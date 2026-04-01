@@ -7,47 +7,64 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main class="add-task-page">
-    <p class="back-to-login"><a href="index.html">← Back to Login</a></p>
-    <h1>Add New Task</h1>
+  <main class="add-task-page fade-in-animation">
+    <header class="dashboard-header">
+      <div class="header-top">
+        <p class="back-to-login"><a href="dashboard.html">← Back to Dashboard</a></p>
+      </div>
+      <div class="welcome-section">
+        <h1>Add New Task ✨</h1>
+        <p class="subtitle dashboard-subtitle">Fill in the details for your upcoming assignment.</p>
+      </div>
+    </header>
 
-    <div class="add-task-form-container">
-      <form class="add-task-form">
-        <div class="form-group">
-          <label for="task-title">Task Title</label>
-          <input type="text" id="task-title" name="title" placeholder="e.g., HCI Essay">
-        </div>
-        <div class="form-group">
-          <label for="course-name">Course Name</label>
-          <input type="text" id="course-name" name="course" placeholder="e.g., Human Computer Interaction">
-        </div>
-        <div class="form-group">
-          <label for="due-date">Due Date</label>
-          <input type="date" id="due-date" name="dueDate">
-        </div>
-        <div class="form-group">
-          <label>Priority</label>
-          <div class="radio-group">
-            <label class="radio-option">
-              <input type="radio" name="priority" value="low">
-              Low
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="priority" value="medium" checked>
-              Medium
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="priority" value="high">
-              High
-            </label>
+    <div class="add-task-form-container modern-card">
+      <form class="add-task-form" action="dashboard.html" method="get">
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="task-title">Task Title</label>
+            <input type="text" id="task-title" name="title" placeholder="e.g., HCI Essay" required>
+          </div>
+          <div class="form-group">
+            <label for="course-name">Course Name</label>
+            <input type="text" id="course-name" name="course" placeholder="e.g., Human Computer Interaction" required>
           </div>
         </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="due-date">Due Date</label>
+            <input type="date" id="due-date" name="dueDate" required>
+          </div>
+          <div class="form-group">
+            <label>Priority</label>
+            <div class="modern-radio-group">
+              <label class="priority-pill low">
+                <input type="radio" name="priority" value="low">
+                <span>Low</span>
+              </label>
+              <label class="priority-pill medium">
+                <input type="radio" name="priority" value="medium" checked>
+                <span>Med</span>
+              </label>
+              <label class="priority-pill high">
+                <input type="radio" name="priority" value="high">
+                <span>High</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="notes">Notes</label>
           <textarea id="notes" name="notes" placeholder="Additional details..."></textarea>
         </div>
-        <button type="submit" class="add-task-btn">Add Task</button>
-        <a href="dashboard.html" class="cancel-link">Cancel</a>
+
+        <div class="form-actions">
+          <a href="dashboard.html" class="cancel-btn">Cancel</a>
+          <button type="submit" class="add-task-btn">Add Task</button>
+        </div>
       </form>
     </div>
   </main>
