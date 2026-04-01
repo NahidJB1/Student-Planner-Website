@@ -1,0 +1,730 @@
+/* ===== Shared / Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  min-height: 100vh;
+  color: #333;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Login Page ===== */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 28px;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.login-header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: -0.02em;
+}
+
+.login-form-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 36px;
+  width: 100%;
+  max-width: 360px;
+  animation: scaleIn 0.4s ease 0.1s both;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.login-form-container:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.login-form-container input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-form-container input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.login-form-container input::placeholder {
+  color: #999;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #0069d9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.35);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.login-signup-link {
+  text-align: center;
+  font-size: 0.9rem;
+  animation: fadeIn 0.4s ease 0.3s both;
+}
+
+.login-browse-pages {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 20px;
+  color: #666;
+  animation: fadeIn 0.4s ease 0.4s both;
+}
+
+.login-browse-pages a {
+  color: #007bff;
+}
+
+.login-browse-pages a:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* ===== Back to Login (app pages) ===== */
+.back-to-login {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.back-to-login a {
+  color: #007bff;
+}
+
+.back-to-login a:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* ===== Dashboard Page ===== */
+.dashboard-page {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 88px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.dashboard-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #333;
+}
+
+.timetable-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 22px;
+  margin-bottom: 22px;
+  animation: fadeInUp 0.4s ease 0.1s both;
+  transition: box-shadow 0.3s ease;
+}
+
+.timetable-section:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.timetable-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.timetable-day {
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.timetable-day:nth-child(1) { animation-delay: 0.15s; }
+.timetable-day:nth-child(2) { animation-delay: 0.2s; }
+.timetable-day:nth-child(3) { animation-delay: 0.25s; }
+.timetable-day:nth-child(4) { animation-delay: 0.3s; }
+.timetable-day:nth-child(5) { animation-delay: 0.35s; }
+
+.timetable-day:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: #ddd;
+}
+
+.timetable-day strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.deadlines-section {
+  margin-bottom: 20px;
+  animation: fadeInUp 0.4s ease 0.2s both;
+}
+
+.deadline-cards {
+  display: grid;
+  gap: 14px;
+}
+
+.deadline-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 18px;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeInUp 0.4s ease both;
+  border: 1px solid transparent;
+}
+
+.deadline-card:nth-child(1) { animation-delay: 0.25s; }
+.deadline-card:nth-child(2) { animation-delay: 0.3s; }
+.deadline-card:nth-child(3) { animation-delay: 0.35s; }
+
+.deadline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  border-color: #e8e8e8;
+}
+
+.deadline-card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.deadline-card span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.06);
+  padding: 12px 0;
+  padding-bottom: max(14px, env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0 0;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #666;
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.06);
+  text-decoration: none;
+}
+
+.nav-item:active {
+  transform: scale(0.98);
+}
+
+.nav-item.active {
+  color: #007bff;
+  font-weight: 600;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+/* ===== Add Task Page ===== */
+.add-task-page {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 88px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-task-page h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 22px;
+  color: #333;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.add-task-form-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 28px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.4s ease 0.1s both;
+  transition: box-shadow 0.3s ease;
+}
+
+.add-task-form-container:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.15s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.25s; }
+.form-group:nth-child(4) { animation-delay: 0.3s; }
+.form-group:nth-child(5) { animation-delay: 0.35s; }
+.form-group:nth-child(6) { animation-delay: 0.4s; }
+.form-group:nth-child(7) { animation-delay: 0.45s; }
+.form-group:nth-child(8) { animation-delay: 0.5s; }
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.form-group textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.radio-option:hover {
+  background: rgba(0, 123, 255, 0.06);
+}
+
+.radio-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff;
+  cursor: pointer;
+}
+
+.add-task-btn {
+  width: 100%;
+  padding: 14px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  margin-top: 8px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-task-btn:hover {
+  background: #0069d9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.35);
+}
+
+.add-task-btn:active {
+  transform: translateY(0);
+}
+
+.cancel-link {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.cancel-link:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* ===== Profile Page ===== */
+.profile-page {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 88px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-page h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 22px;
+  color: #333;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.profile-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 22px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.4s ease both;
+  transition: box-shadow 0.2s ease;
+}
+
+.profile-section:nth-of-type(1) { animation-delay: 0.1s; }
+.profile-section:nth-of-type(2) { animation-delay: 0.18s; }
+.profile-section:nth-of-type(3) { animation-delay: 0.26s; }
+.profile-section:nth-of-type(4) { animation-delay: 0.34s; }
+
+.profile-section:hover {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.profile-section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #333;
+}
+
+.profile-info p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.profile-info p:last-child {
+  margin-bottom: 0;
+}
+
+.preference-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.preference-row:last-child {
+  margin-bottom: 0;
+}
+
+.toggle-buttons {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.toggle-buttons:focus-within {
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #f0f0f0;
+  color: #666;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background: #e8e8e8;
+}
+
+.toggle-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.checkbox-option:hover {
+  color: #007bff;
+}
+
+.checkbox-option input {
+  width: 20px;
+  height: 20px;
+  accent-color: #007bff;
+  cursor: pointer;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 14px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.35);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 600px) {
+  .login-page {
+    padding: 32px;
+  }
+
+  .login-form-container {
+    padding: 40px;
+    max-width: 400px;
+  }
+
+  .dashboard-page {
+    padding: 28px;
+    padding-bottom: 100px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .timetable-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .timetable-section {
+    padding: 26px;
+  }
+
+  .deadline-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .bottom-nav {
+    padding: 14px 24px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+    border-radius: 24px 24px 0 0;
+    left: 50%;
+    right: auto;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .nav-item {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+  }
+
+  .add-task-page,
+  .profile-page {
+    padding: 28px;
+    padding-bottom: 100px;
+  }
+
+  .add-task-form-container {
+    padding: 32px;
+  }
+
+  .profile-section {
+    padding: 26px;
+  }
+}
+
+@media (min-width: 900px) {
+  .timetable-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .deadline-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dashboard-page {
+    padding: 32px;
+  }
+}
