@@ -13,28 +13,75 @@
       <h1>📖 Welcome back, Alex!</h1>
     </header>
 
-    <section class="timetable-section">
-      <h2 class="section-title">This Week's Schedule</h2>
-      <div class="timetable-grid">
-        <div class="timetable-day">
-          <strong>Monday</strong>
-          HCI (10am–12pm)
+    <section class="timetable-section glass-panel">
+      <div class="section-header">
+        <h2 class="section-title">This Week's Schedule</h2>
+        <span class="live-indicator">● Live</span>
+      </div>
+      <div class="timetable-grid modern-grid">
+        <div class="timetable-day interactive-card">
+          <div class="card-top">
+            <strong>Monday</strong>
+            <span class="time-badge">10am–12pm</span>
+          </div>
+          <p class="course-name">💻 HCI</p>
         </div>
-        <div class="timetable-day">
-          <strong>Tuesday</strong>
-          Math (9am–11am)
+        <div class="timetable-day interactive-card">
+          <div class="card-top">
+            <strong>Tuesday</strong>
+            <span class="time-badge">9am–11am</span>
+          </div>
+          <p class="course-name">📐 Math</p>
         </div>
-        <div class="timetable-day">
-          <strong>Wednesday</strong>
-          No classes
+        <div class="timetable-day interactive-card empty-day">
+          <div class="card-top">
+            <strong>Wednesday</strong>
+          </div>
+          <p class="course-name" style="color: #999;">☕ No classes</p>
         </div>
-        <div class="timetable-day">
-          <strong>Thursday</strong>
-          Programming (2pm–4pm)
+        <div class="timetable-day interactive-card">
+          <div class="card-top">
+            <strong>Thursday</strong>
+            <span class="time-badge">2pm–4pm</span>
+          </div>
+          <p class="course-name">⌨️ Programming</p>
         </div>
-        <div class="timetable-day">
-          <strong>Friday</strong>
-          English (1pm–3pm)
+        <div class="timetable-day interactive-card">
+          <div class="card-top">
+            <strong>Friday</strong>
+            <span class="time-badge">1pm–3pm</span>
+          </div>
+          <p class="course-name">📝 English</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="deadlines-section">
+      <div class="section-header">
+        <h2 class="section-title">Upcoming Deadlines</h2>
+        <span class="task-count">3 Tasks</span>
+      </div>
+      <div class="deadline-cards modern-grid">
+        <div class="deadline-card interactive-card">
+          <div class="card-top">
+            <strong>HCI Assignment</strong>
+            <span class="priority-badge high">High</span>
+          </div>
+          <span class="due-date">📅 Due 25 March</span>
+        </div>
+        <div class="deadline-card interactive-card">
+          <div class="card-top">
+            <strong>Math Quiz</strong>
+            <span class="priority-badge medium">Med</span>
+          </div>
+          <span class="due-date">📅 Due 27 March</span>
+        </div>
+        <div class="deadline-card interactive-card">
+          <div class="card-top">
+            <strong>Programming Project</strong>
+            <span class="priority-badge high">High</span>
+          </div>
+          <span class="due-date">📅 Due 30 March</span>
         </div>
       </div>
     </section>
