@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics – Student Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="analytics-page fade-in-animation">
+    <header class="dashboard-header">
+      <div class="header-top">
+        <p class="back-to-login"><a href="dashboard.html">← Back to Dashboard</a></p>
+      </div>
+      <div class="welcome-section">
+        <h1>Productivity Insights 📊</h1>
+        <p class="subtitle dashboard-subtitle">Track your progress and stay motivated.</p>
+      </div>
+    </header>
+
+    <section class="stats-overview modern-card">
+      <div class="section-header">
+        <h2 class="section-title">This Week's Overview</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Tasks Done</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number highlight">4</span>
+          <span class="stat-label">Day Streak 🔥</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">85%</span>
+          <span class="stat-label">Efficiency</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section modern-card">
+      <div class="section-header">
+        <h2 class="section-title">Weekly Activity</h2>
+      </div>
+      <div class="css-bar-chart">
+        <div class="bar-container"><div class="bar" style="--target-height: 40%;"></div><span>M</span></div>
+        <div class="bar-container"><div class="bar" style="--target-height: 70%;"></div><span>T</span></div>
+        <div class="bar-container"><div class="bar" style="--target-height: 100%;" class="active"></div><span>W</span></div>
+        <div class="bar-container"><div class="bar" style="--target-height: 50%;"></div><span>T</span></div>
+        <div class="bar-container"><div class="bar" style="--target-height: 80%;"></div><span>F</span></div>
+        <div class="bar-container"><div class="bar" style="--target-height: 30%;"></div><span>S</span></div>
+        <div class="bar-container"><div class="bar" style="--target-height: 10%;"></div><span>S</span></div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="dashboard.html" class="nav-item"><span class="nav-icon">🏠</span> Home</a>
+    <a href="add-task.html" class="nav-item"><span class="nav-icon">➕</span> Add Task</a>
+    <a href="analytics.html" class="nav-item active"><span class="nav-icon">📊</span> Insights</a>
+    <a href="profile.html" class="nav-item"><span class="nav-icon">👤</span> Profile</a>
+  </nav>
+</body>
+</html>
