@@ -876,3 +876,111 @@ a:hover {
   margin-bottom: 0; /* Override old margin */
   margin-top: 0;
 }
+
+
+/* ===== Analytics Page ===== */
+.analytics-page {
+  min-height: 100vh;
+  padding: 20px;
+  padding-bottom: 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat-box {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.stat-number.highlight {
+  color: #ff4d4f;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* CSS Bar Chart with Smooth Animation */
+.css-bar-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 160px;
+  padding-top: 20px;
+  gap: 8px;
+}
+
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.bar {
+  width: 100%;
+  max-width: 36px;
+  background: #f0f0f0;
+  border-radius: 6px 6px 0 0;
+  height: 0; /* Starting point for animation */
+  animation: growBar 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-delay: 0.2s;
+  transition: background 0.3s ease;
+}
+
+.bar-container:hover .bar {
+  background: #007bff;
+}
+
+.bar-container:nth-child(3) .bar {
+  background: #007bff; /* Highlights current day */
+}
+
+.bar-container span {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+}
+
+@keyframes growBar {
+  to { height: var(--target-height); }
+}
+
+/* Adjust Nav Items to fit 4 tabs nicely on mobile */
+.nav-item {
+  padding: 10px 12px;
+}
+@media (min-width: 600px) {
+  .nav-item { padding: 12px 24px; }
+  .stat-number { font-size: 1.8rem; }
+  .stat-label { font-size: 0.85rem; }
+}
