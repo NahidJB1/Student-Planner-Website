@@ -783,3 +783,157 @@ a:hover {
   }
 }
 
+
+
+/* --- Modern Dashboard Redesign --- */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.live-indicator {
+  color: #ff3b30;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.task-count {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.glass-panel {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.glass-panel:hover {
+  box-shadow: none;
+}
+
+/* Redesigned Interactive Cards */
+.modern-grid .interactive-card {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Sweeping Shine Animation on Hover */
+.modern-grid .interactive-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+
+.modern-grid .interactive-card:hover::before {
+  left: 200%;
+}
+
+.modern-grid .interactive-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.12);
+  border-color: #007bff;
+}
+
+/* Card Internal Typography & Layout */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-top strong {
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.course-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  z-index: 2;
+}
+
+.due-date {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+/* Badges */
+.time-badge, .priority-badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.time-badge {
+  background: #f4f4f5;
+  color: #555;
+}
+
+.priority-badge.high {
+  background: #ffeef0;
+  color: #e63946;
+}
+
+.priority-badge.medium {
+  background: #fff4e6;
+  color: #f77f00;
+}
+
+.empty-day {
+  background: #fafafa !important;
+  border: 1px dashed #ddd !important;
+}
+
+/* Mobile Adjustments for Dashboard Redesign */
+@media (max-width: 480px) {
+  .modern-grid .interactive-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+  
+  .course-name {
+    font-size: 1.05rem;
+  }
+  
+  .card-top strong {
+    font-size: 0.95rem;
+  }
+}
