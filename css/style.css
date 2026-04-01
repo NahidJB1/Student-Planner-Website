@@ -750,7 +750,7 @@ a:hover {
 .subtitle {
   text-align: center;
   color: #666;
-  margin-top: -15px;
+  margin-top: 5px; /* Changed from -15px to add proper spacing */
   margin-bottom: 25px;
   font-size: 0.95rem;
 }
