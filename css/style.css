@@ -180,124 +180,213 @@ a:hover {
   opacity: 0.85;
 }
 
-/* ===== Dashboard Page ===== */
+/* ===== Dashboard Page Redesign ===== */
 .dashboard-page {
   min-height: 100vh;
   padding: 20px;
-  padding-bottom: 88px;
-  max-width: 1200px;
+  padding-bottom: 100px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .dashboard-header {
-  margin-bottom: 24px;
-  animation: fadeInUp 0.4s ease forwards;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.5s ease forwards;
 }
 
-.dashboard-header h1 {
-  font-size: 1.5rem;
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.date-badge {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #333;
+}
+
+.welcome-section h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
   letter-spacing: -0.02em;
+  margin-bottom: 5px;
+}
+
+.dashboard-subtitle {
+  text-align: left;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.modern-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.modern-card:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .section-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.view-all {
+  font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 14px;
-  color: #333;
-}
-
-.timetable-section {
-  background: white;
+  background: #f5f5f5;
+  padding: 6px 12px;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
-  padding: 22px;
-  margin-bottom: 22px;
-  animation: fadeInUp 0.4s ease 0.1s both;
-  transition: box-shadow 0.3s ease;
+  color: #333;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.timetable-section:hover {
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+.view-all:hover {
+  background: #007bff;
+  color: white;
+  text-decoration: none;
 }
 
-.timetable-grid {
-  display: grid;
+/* Deadlines List */
+.deadline-list {
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
-.timetable-day {
-  border: 1px solid #e8e8e8;
-  border-radius: 10px;
+.deadline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 16px;
-  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
-  font-size: 0.95rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  animation: fadeInUp 0.4s ease both;
+  border-radius: 14px;
+  background: #fcfcfc;
+  border: 1px solid #f0f0f0;
+  border-left: 4px solid #ccc;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
-.timetable-day:nth-child(1) { animation-delay: 0.15s; }
-.timetable-day:nth-child(2) { animation-delay: 0.2s; }
-.timetable-day:nth-child(3) { animation-delay: 0.25s; }
-.timetable-day:nth-child(4) { animation-delay: 0.3s; }
-.timetable-day:nth-child(5) { animation-delay: 0.35s; }
-
-.timetable-day:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  border-color: #ddd;
-}
-
-.timetable-day strong {
-  display: block;
-  margin-bottom: 6px;
-  color: #333;
-  font-size: 0.9rem;
-}
-
-.deadlines-section {
-  margin-bottom: 20px;
-  animation: fadeInUp 0.4s ease 0.2s both;
-}
-
-.deadline-cards {
-  display: grid;
-  gap: 14px;
-}
-
-.deadline-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
-  padding: 18px;
-  font-size: 0.95rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  animation: fadeInUp 0.4s ease both;
-  border: 1px solid transparent;
-}
-
-.deadline-card:nth-child(1) { animation-delay: 0.25s; }
-.deadline-card:nth-child(2) { animation-delay: 0.3s; }
-.deadline-card:nth-child(3) { animation-delay: 0.35s; }
-
-.deadline-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+.deadline-item:hover {
+  transform: translateX(4px);
+  background: #ffffff;
   border-color: #e8e8e8;
 }
 
-.deadline-card strong {
+.deadline-item.high-priority { border-left-color: #ff4d4f; }
+.deadline-item.medium-priority { border-left-color: #faad14; }
+.deadline-item.low-priority { border-left-color: #52c41a; }
+
+.deadline-info strong {
   display: block;
-  margin-bottom: 4px;
+  font-size: 1rem;
   color: #333;
+  margin-bottom: 4px;
 }
 
-.deadline-card span {
-  color: #666;
+.deadline-info span {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.due-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  background: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* Timetable List */
+.timetable-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timetable-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.timetable-row:hover {
+  background: rgba(0, 123, 255, 0.04);
+  transform: translateX(4px);
+}
+
+.day-badge {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  font-weight: 700;
   font-size: 0.9rem;
+  border-radius: 12px;
+  flex-shrink: 0;
 }
 
+.empty-day .day-badge {
+  background: #f5f5f5;
+  color: #aaa;
+}
+
+.class-details strong {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.class-details span {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.empty-day .class-details span {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Desktop Grid Configuration */
+@media (min-width: 850px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
 /* Bottom Navigation */
 .bottom-nav {
   position: fixed;
@@ -671,19 +760,6 @@ a:hover {
     font-size: 1.65rem;
   }
 
-  .timetable-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .timetable-section {
-    padding: 26px;
-  }
-
-  .deadline-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
 
   .bottom-nav {
     padding: 14px 24px;
@@ -720,9 +796,7 @@ a:hover {
     grid-template-columns: repeat(5, 1fr);
   }
 
-  .deadline-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
+
 
   .dashboard-page {
     padding: 32px;
@@ -785,155 +859,3 @@ a:hover {
 
 
 
-/* --- Modern Dashboard Redesign --- */
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  animation: fadeInUp 0.4s ease both;
-}
-
-.live-indicator {
-  color: #ff3b30;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  animation: pulse-red 2s infinite;
-}
-
-@keyframes pulse-red {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
-
-.task-count {
-  background: rgba(0, 123, 255, 0.1);
-  color: #007bff;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.glass-panel {
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-}
-
-.glass-panel:hover {
-  box-shadow: none;
-}
-
-/* Redesigned Interactive Cards */
-.modern-grid .interactive-card {
-  background: #ffffff;
-  border: 1px solid #f0f0f0;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-/* Sweeping Shine Animation on Hover */
-.modern-grid .interactive-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 50%; height: 100%;
-  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
-  transform: skewX(-25deg);
-  transition: all 0.6s ease;
-  z-index: 1;
-}
-
-.modern-grid .interactive-card:hover::before {
-  left: 200%;
-}
-
-.modern-grid .interactive-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.12);
-  border-color: #007bff;
-}
-
-/* Card Internal Typography & Layout */
-.card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  position: relative;
-  z-index: 2;
-}
-
-.card-top strong {
-  font-size: 1.05rem;
-  color: #222;
-}
-
-.course-name {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #333;
-  position: relative;
-  z-index: 2;
-}
-
-.due-date {
-  font-size: 0.85rem;
-  color: #666;
-  font-weight: 500;
-  position: relative;
-  z-index: 2;
-}
-
-/* Badges */
-.time-badge, .priority-badge {
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 8px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-}
-
-.time-badge {
-  background: #f4f4f5;
-  color: #555;
-}
-
-.priority-badge.high {
-  background: #ffeef0;
-  color: #e63946;
-}
-
-.priority-badge.medium {
-  background: #fff4e6;
-  color: #f77f00;
-}
-
-.empty-day {
-  background: #fafafa !important;
-  border: 1px dashed #ddd !important;
-}
-
-/* Mobile Adjustments for Dashboard Redesign */
-@media (max-width: 480px) {
-  .modern-grid .interactive-card {
-    padding: 16px;
-    border-radius: 14px;
-  }
-  
-  .course-name {
-    font-size: 1.05rem;
-  }
-  
-  .card-top strong {
-    font-size: 0.95rem;
-  }
-}
